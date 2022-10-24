@@ -10,27 +10,24 @@ class Mensajes {
     async save(obj) {
         try {
             this.knex.schema.hasTable('mensajes').then(async (exists) => {
-                console.log('save')
                 if (exists) { return await this.knex(this.table).insert(obj) }
                 else { await this.crearTable() }
             })
         }
-        catch (error) { console.log('error?', error) }
+        catch (error) { console.log(error) }
     }
 
     async getAll() {
         try {
-            console.log('getAll')
             const array = await this.knex.schema.hasTable('mensajes').then(async (exists) => {
                 if (exists) { return await this.knex.from(this.table).select('*') }
                 else { await this.crearTable() }
             })
             return array
         }
-        catch (error) { console.log('error?', error) }
+        catch (error) { console.log(error) }
     }
     async crearTable() {
-        // const knex = require('knex')(option.sqlite)
         await this.knex.schema.createTable('mensajes', table => {
             table.date('time')
             table.string('mensaje')
