@@ -1,6 +1,5 @@
 const socket = io()
 
-
 const addArray = e => {
     const title = document.querySelector('#title').value
     const price = document.querySelector('#price').value
@@ -9,8 +8,6 @@ const addArray = e => {
     return false
 }
 
-
-
 const addMensaje = e => {
     fyh = new Date().toLocaleString()
     const email = document.querySelector('#email').value
@@ -18,7 +15,6 @@ const addMensaje = e => {
     socket.emit('newMensaje', { email: email, time: fyh, mensaje: mensaje })
     return false
 }
-
 
 const render = array => {
     const html = array.map(elem => {
@@ -32,6 +28,7 @@ const render = array => {
     document.querySelector('#array').innerHTML = html
     document.querySelector('#table').scrollTop = document.querySelector('#table').scrollHeight
 }
+
 const rendermsg = archivo => {
     const html = archivo.map(elem => {
         return (`<div>

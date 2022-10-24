@@ -39,5 +39,4 @@ class Mensajes {
 }
 
 const mensajes = new Mensajes(option.sqlite, 'mensajes')
-
 module.exports = mensajes

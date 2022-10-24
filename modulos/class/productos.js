@@ -1,5 +1,5 @@
 const knex = require('knex')
-const { option } = require('./configKnex/config.js')
+const { option } = require('../configKnex/config.js')
 
 class Productos {
     constructor(config, tabla) {
