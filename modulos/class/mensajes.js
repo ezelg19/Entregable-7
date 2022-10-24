@@ -33,7 +33,7 @@ class Mensajes {
             table.string('mensaje')
             table.string('email')
         })
-            .then(() => console.log('creada'))
+            .then(() => console.log('BD creada'))
             .catch((error) => { console.log(error); throw error })
     }
 }
